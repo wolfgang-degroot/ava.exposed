@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block stylesheet %}
+	<link rel="prefetch" href="/amazing-ru/fbi.jpg">
+	<link rel="stylesheet"	type="text/css" href="{{ config.base_url | safe}}/base.css">
+	<style>
+		body {
+			background-color: #0000;
+		}
+		article {
+			max-width: 100%;
+			background-color: #FFFF;
+		}
+		footer {
+			background: linear-gradient(180deg, #FFFF, #0000);
+		}
+		img {
+			user-select: none;
+			max-width: 100%;
+			width: auto;
+			height: auto;
+			background-image: url("data:image/webp;base64,UklGRroBAABXRUJQVlA4IK4BAABwDACdASoyAEAAPrVarVaqJyyls/M8AJAWgAM/UW74dIm183BGMIUDWdZBjUNzZDSD+JmqEHSosFFvGuUf+wD+SyO1th0bQFXNERpNRT+AgenYYJSkfxMHNr/kHFTDRCJUjSjUzQcDz1DNrkAA/vZqBv8csMg8kWyfdBu2vR/ukYra0tVtiWZ+Wd6vWqw2Ou6mKjQP8fbtdzYgq+0MOyXIDbhjGbsCdXg7vWdR1ALCIhChwu/JTR5+65N1qjVStQ7b5rhsEojeqo2GxX1uiuzI515jqhPoif/lmOsjZpeHTaiL8IMECrjDrhHuzMkcHahLgXEMlgGviKqCZh7TnBZLkWBENmtViVsMkJOPIwGg3f8r3A7KccOBoq47STBNa3XAij9AuiBWwrV2R7aD+xpunc/rGK25P8hk10AngIB3iU9okJM7ezLhOuHKidtPQMY5+MDa88r+KM9PEUR5BWhZRgFGz7BFnNL06hUKfPhi941aYCq0Db/cDL/Vu+p9DFU1XtnJ2e/80wU0Hrp8xry9KfD0VqojkGjUCRw9AxiPgc8mfhNg8DqvOcwkAAAA");
+			background-size: cover;
+			padding: 0;
+			-webkit-touch-callout: none;
+		}
+
+		h4 {
+			font-family: Arial, Helvetica, sans-serif;
+			margin: 0;
+			margin-bottom: 2em;
+		}
+
+		.alert {
+			text-align: center;
+			color: white;
+			background-color: grey;
+			padding-bottom: 0.25rem;
+			font-size: 1rem;
+		}
+	</style>
+{% endblock stylesheet %}
+
+{% block body %}
+<article>
+	<picture>
+		<source srcset="{{ config.base_url | safe}}/front_launch.webp" type="image/webp">
+		<source srcset="{{ config.base_url | safe}}/front_launch.jpg" type="image/jpeg">
+		<img src="{{ config.base_url | safe}}/front_launch.jpg" width="1255" height="1600" usemap="#Map" alt="Issue Number 38 Magazine Cover">
+	</picture>
+</article>
+{% endblock body %}
+{% block footer %}
+	<map name="Map" id="Map">
+		<area alt="" title="AVA EXPOSED"    href="#honk"      shape="rect" coords="76,305,702,79" onclick="honk()" />
+		<area alt="" title="amazing.ru"     href="amazing-ru" shape="rect" coords="53,604,412,308" />
+		<area alt="" title="Tax Evasion"    href="article/ava-accused-of-tax-evasion"  shape="poly" coords="1203,603,432,603,432,308,705,308,705,58,1203,59" />
+		<area alt="" title="Cretin"         href="article/avas-a-cretin"  shape="rect" coords="301,611,1119,675" />
+		<area alt="" title="Dr. Huang"      href="article/she-aint-even-that-cute"  shape="rect" coords="231,691,1191,1533" />
+		<area alt="" title="Ava's a Rat??"  href="article/avas-a-rat"  shape="rect" coords="53,1113,204,631" />
+		<area alt="" title="Ava's Drunk"    href="article/caught-wasted-in-public"  shape="rect" coords="204,1545,53,1113" />
+	</map>
+	<footer>
+		<h4>On March 10th, 2021, Ava passed away in the night, living to be about 12.<br>
+			We will always miss her, and enjoy the laughs and love she gave us,<br>
+			And still gives us, even to this day.
+		</h4>
+		<h4>
+			Rest peacefully Ava, during your eternal nap.<br>
+			We will always love you.
+		</h4>
+		<script src="{{ config.base_url | safe}}/imageMapResizer.min.js"></script>
+		<script>
+			imageMapResize();
+			function honk() {
+				var audio = document.getElementById("audio");
+				audio.play();
+			}
+		</script>
+		<audio id="audio" preload="auto">
+			<source src="{{ config.base_url | safe}}/honk.mp3" type="audio/mpeg">
+		</audio>
+	</footer>
+{% endblock footer %}

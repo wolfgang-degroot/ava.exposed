@@ -1,0 +1,64 @@
+{% import "macros.html" as macros -%}
+<!DOCTYPE HTML>
+<html lang="{{ lang }}">
+<head>
+{% if page.title %}
+	<title>{{ page.title }}</title>
+	<meta name="title"			content="{{ page.title }} | AVA EXPOSED">
+	<meta name="og:title"		content="{{ page.title }} | AVA EXPOSED">
+{% else %}
+	<title>{{ config.title }}</title>
+	<meta name="title"			content="{{ config.title }}">
+	<meta name="og:title"		content="{{ config.title }}">
+{% endif %}
+{% if page.description %}
+	<meta name="description"	content="{{ page.description }}">
+	<meta name="og:description"	content="{{ page.description }}">
+{% endif %}
+	<style>
+		html {
+			background: linear-gradient(90deg, #000 0%, #211 20%, #211 80%, #000 100%);
+			font-size: 110%;
+		}
+		body {
+			background-color: #EEE;
+			text-align: center;
+			padding: 0;
+			margin: 0 auto;
+			max-width: 1024px;
+			min-height: 100vh;
+		}
+		article {
+			max-width: 900px;
+			text-align: justify;
+			padding: 1em;
+			padding-top: 0px;
+			margin: 0 auto;
+		}
+		h4 {
+			margin: 0;
+			padding-bottom: 1em;
+		}
+	</style>
+{% block stylesheet %}{% endblock %}
+	<link rel="canonical"		href="{{ config.base_url ~ current_path }}">
+	<meta property="og:url"		content="{{ config.base_url ~ current_path }}">
+	<meta charset="UTF-8">
+	<link rel="preconnect"		href="https://fonts.gstatic.com" crossorigin="anonymous">
+	<meta name="author"			content="AVA EXPOSED">
+	<meta name="theme-color"	content="#FF0000" />
+	<meta name="viewport"		content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon"	type="image/png" href="{{ config.base_url ~ '/64px.png' }}" />
+	<meta name=”twitter:card”	content=”summary_large_image”>
+	<meta property="og:image"	content="{{ config.base_url ~ '/logo.png' }}" />
+	<meta property="og:image:alt" content="'AVA EXPOSED' Logo" />
+</head>
+<body>
+	{% block body %} {% endblock %}
+	<footer>
+		{% block footer %}
+			{{ macros::copyright() }}
+		{% endblock %}
+	</footer>
+</body>
+</html>

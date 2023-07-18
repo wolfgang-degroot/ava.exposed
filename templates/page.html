@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block stylesheet %}
+	<link rel="stylesheet"	type="text/css" href="{{ config.base_url | safe}}/font.css">
+	<style>
+		img.logo {
+			height: 128px;
+			width: 349px;
+			background: #F00;
+			color: #FFF;
+			text-align: center;
+			box-shadow: 0 0 8px #FFF;
+			margin-top: 1em;
+		}
+		h2 {
+			font-size: 12px
+		}
+		code {
+			color: #988;
+			font-size: 1.125em;
+			font-style: italic;
+		}
+		p:first-of-type::first-letter {
+				font-size: 1.5em;
+		}
+	</style>
+{% endblock stylesheet %}
+{% block body %}
+	<a href="{{ config.base_url ~ '/' }}">
+		<img
+			src="{{ config.base_url ~ '/logo.png' }}"
+			alt="AVA EXPOSED Logo"
+			width="349"
+			height="128"
+			class="logo"
+		>
+	</a>
+	<article>
+	{% block post %}
+		<h1>{{ page.title }}</h1>
+		<h2>By <i>AVA EXPOSED Staff</i></h2>
+		{{ page.content | safe }}
+	{% endblock post %}
+	</article>
+{% endblock body %}
