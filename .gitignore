@@ -1,0 +1,7 @@
+# Environment Variables
+.env
+# Style
+*.sass-cache/
+*root/
+# Favicon
+#root/favicon.ico
