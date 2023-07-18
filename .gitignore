@@ -3,5 +3,6 @@
 # Style
 *.sass-cache/
 *root/
+public/*
 # Favicon
 #root/favicon.ico
