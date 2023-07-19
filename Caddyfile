@@ -3,7 +3,7 @@
 #?-----------?#
 
 www.ava.exposed {
-	root * public
+	root * /var/www/pets/ava.exposed/public
 	file_server
 
 	#TODO: Add the Artemis 404 page
