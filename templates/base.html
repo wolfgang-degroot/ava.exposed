@@ -15,10 +15,22 @@
 	<meta name="description"	content="{{ page.description }}">
 	<meta name="og:description"	content="{{ page.description }}">
 {% endif %}
-	<style>
+	<style type="text/css">
+		@font-face {
+			font-family: 'Slabo 27px';
+			font-display: swap;
+			src: url(/Slabo27px-subset.woff2) format('woff2');
+		}
+		@font-face {
+			font-family: 'Fjalla One';
+			font-display: swap;
+			src: url(/FjallaOne-subset.woff2) format('woff2');
+		}
+	</style>
+	<style type="text/css">
 		html {
 			background: linear-gradient(90deg, #000 0%, #211 20%, #211 80%, #000 100%);
-			font-size: 110%;
+			font-size: 16px;
 		}
 		body {
 			background-color: #EEE;
@@ -27,6 +39,9 @@
 			margin: 0 auto;
 			max-width: 1024px;
 			min-height: 100vh;
+		}
+		body, code {
+			font-family: 'Slabo 27px', serif;
 		}
 		article {
 			max-width: 900px;
@@ -38,6 +53,7 @@
 		h4 {
 			margin: 0;
 			padding-bottom: 1em;
+			font-family: Arial, Helvetica, sans-serif;
 		}
 	</style>
 {% block stylesheet %}{% endblock %}

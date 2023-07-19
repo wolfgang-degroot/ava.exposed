@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block stylesheet %}
-	<link rel="stylesheet"	type="text/css" href="{{ config.base_url | safe}}/font.css">
-	<style>
+	<style type="text/css">
 		img.logo {
 			height: 128px;
 			width: 349px;
@@ -10,6 +9,9 @@
 			text-align: center;
 			box-shadow: 0 0 8px #FFF;
 			margin-top: 1em;
+		}
+		h1 {
+			font-family: 'Fjalla One', sans-serif;;
 		}
 		h2 {
 			font-size: 12px
