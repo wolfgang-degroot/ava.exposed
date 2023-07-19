@@ -1,0 +1,16 @@
+#?-----------?#
+#?	Domains  ?#
+#?-----------?#
+
+www.ava.exposed {
+	root * public
+	file_server
+
+	#TODO: Add the Artemis 404 page
+}
+
+ava.exposed {
+	redir * https://www.ava.exposed {
+		permanent
+	}
+}
